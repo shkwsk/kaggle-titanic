@@ -1,4 +1,5 @@
 import pandas as pd
+from matplotlib import pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 
 # load data
@@ -32,7 +33,7 @@ print(test_df.head(3))
 # predict with random forest
 train_data = train_df.values
 test_data = test_df.values
-model = RandomForestClassifier(n_estimators=100)
+model = RandomForestClassifier(n_estimators=200)
 survived = model.fit(train_data[0::, 1::], train_data[0::, 0]).predict(test_data).astype(int)
 
 # export result
